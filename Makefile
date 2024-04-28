@@ -1,6 +1,6 @@
 CXX := clang
 
-all: a b
+all: setup a b
 
 a: src/a.c
 	$(CXX) -o bin/a -g src/a.c
@@ -8,7 +8,7 @@ a: src/a.c
 b: src/b.c
 	$(CXX) -o bin/b -g src/b.c
 
-run: clean all
+run: clean setup all
 	clear
 	./bin/a
 	./bin/b
